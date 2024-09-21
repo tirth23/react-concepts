@@ -1,0 +1,4 @@
+* hooks name should starts with "use"
+* Hooks should be declared in the top order of the comp
+*Hooks should be executed in the same for each rendering
+*Hooks can be used only within function comp.

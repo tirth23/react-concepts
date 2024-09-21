@@ -1,0 +1,32 @@
+export let products = [
+	{
+		id: 1,
+		name: "mobile",
+		brand: "apple",
+		category: "electronics",
+		price: 50000,
+		rating: 4.5,
+		instock: true,
+		comments: ["good", "great", "super"],
+	},
+	{
+		id: 2,
+		name: "latop",
+		brand: "Dell",
+		price: 60000,
+		category: "electronics",
+		rating: 4.0,
+		instock: true,
+		comments: ["good", "average", "Great"],
+	},
+	{
+		id: 3,
+		name: "chair",
+		brand: "wakefit",
+		price: 5000,
+		category: "furniture",
+		rating: 4,
+		instock: false,
+		comments: ["good", "super"],
+	},
+];
