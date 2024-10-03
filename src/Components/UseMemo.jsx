@@ -1,40 +1,43 @@
 import React, { useMemo, useState } from "react";
 
 function UseMemo(props) {
-	const [usd, setUsd] = useState(0);
-	const [msg, setMSg] = useState("Hello");
-	// const [inr,setInr]=useState(0)
+	const [count, setCount] = useState(0);
+	const [todos, setTodos] = useState([]);
+	const calculation = useMemo(() => expensiveCalculation(count), [count]);
 
-	let handlechange = (event) => {
-		console.log(event.target.value);
-		//setUsd(parseInt(event.target.value))
-		if (event.target.value) {
-			setUsd(parseInt(event.target.value));
-		} else {
-			setUsd(0);
-		}
+	const increment = () => {
+		setCount((c) => c + 1);
 	};
-	//useMemo(callback,dep)=>it will execute the callback if therre is change in dep
-	//else it will return the cached value.
-	let convert_usd_to_inr = useMemo(() => {
-		console.log("Expensive function..");
-		return usd * 82.9;
-	}, [usd]);
+	const addTodo = () => {
+		setTodos((t) => [...t, "New Todo"]);
+	};
 
 	return (
 		<div>
-			<input type="text" onChange={handlechange} placeholder="Enter USD" />
-			<p>INR:{convert_usd_to_inr}</p>
-			<p>{msg}</p>
-			<button
-				onClick={() => {
-					setMSg(msg + "!");
-				}}
-			>
-				change msg
-			</button>
+			<div>
+				<h2>My Todos</h2>
+				{todos.map((todo, index) => {
+					return <p key={index}>{todo}</p>;
+				})}
+				<button onClick={addTodo}>Add Todo</button>
+			</div>
+			<hr />
+			<div>
+				Count: {count}
+				<button onClick={increment}>+</button>
+				<h2>Expensive Calculation</h2>
+				{calculation}
+			</div>
 		</div>
 	);
 }
+
+const expensiveCalculation = (num) => {
+	console.log("Calculating...");
+	for (let i = 0; i < 1000000000; i++) {
+		num += 1;
+	}
+	return num;
+};
 
 export default UseMemo;

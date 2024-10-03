@@ -29,13 +29,58 @@ function Topnavbar(props) {
 									Home
 								</Link>
 							</li>
+              <li className="nav-item">
+								<Link
+									className="nav-link active"
+									aria-current="page"
+									to={"effect"}
+								>
+									useEffect
+								</Link>
+							</li>
+              <li className="nav-item">
+								<Link
+									className="nav-link active"
+									aria-current="page"
+									to={"context"}
+								>
+									useContext
+								</Link>
+							</li>
+							<li className="nav-item">
+								<Link
+									className="nav-link active"
+									aria-current="page"
+									to={"ref"}
+								>
+									useRef
+								</Link>
+							</li>
+              <li className="nav-item">
+								<Link
+									className="nav-link active"
+									aria-current="page"
+									to={"usecallback"}
+								>
+									useCallback
+								</Link>
+							</li>
 							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
 									to={"usememo"}
 								>
-									useMemoDemo
+									useMemo
+								</Link>
+							</li>
+              <li className="nav-item">
+								<Link
+									className="nav-link active"
+									aria-current="page"
+									to={"lazy"}
+								>
+									Lazy Loading
 								</Link>
 							</li>
 							<li className="nav-item">
@@ -81,6 +126,33 @@ function Topnavbar(props) {
 									to={"/hoc"}
 								>
 									HOC
+								</Link>
+							</li>
+              <li className="nav-item">
+								<Link
+									className="nav-link active"
+									aria-current="page"
+									to={"/hoc2"}
+								>
+									HOC2
+								</Link>
+							</li>
+              <li className="nav-item">
+								<Link
+									className="nav-link active"
+									aria-current="page"
+									to={"/renderprops"}
+								>
+									Render Props
+								</Link>
+							</li>
+              <li className="nav-item">
+								<Link
+									className="nav-link active"
+									aria-current="page"
+									to={"/compoundpattern"}
+								>
+									Compound Pattern
 								</Link>
 							</li>
 							<li className="nav-item">
