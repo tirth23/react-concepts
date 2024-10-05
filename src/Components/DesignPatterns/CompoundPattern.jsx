@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Tab from "./Tab";
+import Tab from "./CompoundPatternTab";
 
 const CompoundPattern = () => {
-	const { currentTabIndex, setCurrentTabIndex } = useState(1);
+	const [currentTabIndex, setCurrentTabIndex] = useState(1);
 
 	const handleChange = (newIndex) => {
 		setCurrentTabIndex(newIndex);
@@ -11,7 +11,7 @@ const CompoundPattern = () => {
 	return (
 		<div>
 			<Tab currentTab={currentTabIndex} onChange={handleChange}>
-				<Tab.HeadsContainer style={{ display: "flex" }}>
+				<Tab.HeadsContainer>
 					<Tab.Item label="Tab 1" index={1} />
 					<Tab.Item label="Tab 2" index={2} />
 					<Tab.Item label="Tab 3" index={3} />

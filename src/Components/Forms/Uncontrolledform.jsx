@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef } from "react";
-import { products } from "./products";
+import { products } from "../products";
 
 function Uncontrolledform(props) {
 	let pname = useRef();

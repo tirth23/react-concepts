@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import ThirdParent from "./ThirdParent.jsx";
+import ThirdParent from "./UseCallbackThirdParent.jsx";
 const SecondParent = () => {
 	const myFunction = useCallback(() => {
 		console.log("my function called");

@@ -1,7 +1,7 @@
 import React from "react";
-import { Enhance_component } from "./Basecounter";
+import { Enhance_component } from "./HOCBasecounter";
 
-function Citylist(props) {
+function HOCCitylist(props) {
 	let citylist = ["mumbai", "pune", "delhi", "Chennai"];
 	console.log(props);
 	return (
@@ -13,4 +13,4 @@ function Citylist(props) {
 	);
 }
 
-export default Enhance_component(Citylist);
+export default Enhance_component(HOCCitylist);

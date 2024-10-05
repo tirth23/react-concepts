@@ -1,6 +1,6 @@
 import React, { memo, useEffect } from 'react'
 
-const Text = memo((props) => {
+const LazyText = memo((props) => {
   const {externalData, children} = props;
 
   useEffect(() => {
@@ -12,4 +12,4 @@ const Text = memo((props) => {
   )
 })
 
-export default Text
+export default LazyText;

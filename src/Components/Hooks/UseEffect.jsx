@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-const Effect = (props) => {
+const UseEffect = (props) => {
 	const { customText } = props;
 	const [counter, setCounter] = useState(0);
 	let now = performance.now();
 	while (performance.now() - now < 400) {
 		// Wait for the next browser paint. block render
-    // add useLayoutEffect for stopping browser paint
+		// add useLayoutEffect for stopping browser paint
 	}
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -40,4 +40,4 @@ const Effect = (props) => {
 		</>
 	);
 };
-export default Effect;
+export default UseEffect;

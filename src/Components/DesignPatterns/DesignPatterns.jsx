@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
-function Topnavbar(props) {
-	let styleobj = { backgroundColor: "darkcyan" };
-
+const DesignPatterns = () => {
 	return (
 		<div>
-			<nav className="navbar navbar-expand-xl" style={styleobj}>
+			<nav
+				className="navbar navbar-expand-xl"
+				style={{ backgroundColor: "#E4B1F0" }}
+			>
 				<div className="container-fluid">
 					<a className="navbar-brand" href="#">
 						React Demo
@@ -29,111 +30,103 @@ function Topnavbar(props) {
 									Home
 								</Link>
 							</li>
-              <li className="nav-item">
+							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"/lifecycledemo"}
+									to={"lazy"}
 								>
-									LifeCycle
+									Lazy Loading
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"hooks"}
+									to={"liftingstate"}
 								>
-									Hooks
+									Lifting State Up
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"designpatterns"}
+									to={"/designpatterns/usingcustomhook"}
 								>
-									Design Patterns
-								</Link>
-							</li>
-              <li className="nav-item">
-								<Link
-									className="nav-link active"
-									aria-current="page"
-									to={"/forms"}
-								>
-									Forms
+									UsingCustomHook
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"/axiosdemo"}
+									to={"/designpatterns/hoc"}
 								>
-									Axios
+									HOC
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"/redux"}
+									to={"/designpatterns/hoc2"}
 								>
-									reduxdemo
+									HOC2
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"/counter"}
+									to={"/designpatterns/renderprops"}
 								>
-									Counter
+									Render Props
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"/classcounter"}
+									to={"/designpatterns/compoundpattern"}
 								>
-									ClassCounter
+									Compound Pattern
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"timer"}
+									to={"/designpatterns/pagination"}
 								>
-									Timer
+									Pagination
 								</Link>
 							</li>
               <li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"/productlist"}
+									to={"/designpatterns/debounce"}
 								>
-									ProductList
+									Debounce
 								</Link>
 							</li>
               <li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"/productdetail/2/laptop"}
+									to={"/designpatterns/debouncecustom"}
 								>
-									Productdetails
+									DebounceCustom
 								</Link>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</nav>
+			<Outlet />
 		</div>
 	);
-}
+};
 
-export default Topnavbar;
+export default DesignPatterns;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SecondParent from "./SecondParent";
+import SecondParent from "./UseCallbackSecondParent";
 
 const UseCallback = () => {
 	const [count1, setCount] = useState(0);

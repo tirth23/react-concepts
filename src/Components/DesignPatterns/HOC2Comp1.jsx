@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import withDimension from "./EnhanceWidthDimension";
+import withDimension from "./HOC2EnhanceWidthDimension.jsx";
 
 /* Higher-Order Component (HOC): A function that takes a component as input and returns a new component with enhanced functionality.
 HOCs often use render props to pass data or context to the wrapped component. */

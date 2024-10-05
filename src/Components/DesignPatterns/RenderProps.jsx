@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import InputRender from "./InputRender";
+import RenderInput from "./RenderInput";
 
 /* This is presentatonal component */
 /* Render Prop Function: The function passed as a prop to the higher-order component. 
@@ -10,9 +10,9 @@ const RenderProps = (props) => {
 	return (
 		<>
 			<>
-				<InputRender renderTextBelow={showvalue} />
+				<RenderInput renderTextBelow={showvalue} />
 				<br />
-				<InputRender renderTextBelow={showmultiple} />
+				<RenderInput renderTextBelow={showmultiple} />
 			</>
 		</>
 	);

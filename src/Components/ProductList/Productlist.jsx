@@ -1,5 +1,5 @@
 import React from "react";
-import { products } from "./products";
+import { products } from "../products";
 import Productitem from "./Productitem";
 import { useState } from "react";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { useFetch } from "./Customhook";
+import { useFetch } from "./UsingCustomFetch";
 
 function UsingCustomHook(props) {
 	let postlist = useFetch("https://jsonplaceholder.typicode.com/posts");

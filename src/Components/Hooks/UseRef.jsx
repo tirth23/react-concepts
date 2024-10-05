@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import { RefInput, RefInputForwardRef } from "./RefInput";
+import { UseRefInput, UseRefInputForwardRef } from "./UseRefInput";
 
-const Ref = () => {
+const UseRef = () => {
 	let myLocal = 0;
 	/* ref has memory that persists between renders & does not cause a rerender */
 	const myref = useRef(0);
@@ -41,7 +41,7 @@ const Ref = () => {
 			</div>
 
 			{/* passing ref to InputRef component by making custom ref */}
-			<RefInput inputReference={inputRef} />
+			<UseRefInput inputReference={inputRef} />
 			<button
 				onClick={() => {
 					if (inputRef.current) inputRef.current.focus();
@@ -50,7 +50,7 @@ const Ref = () => {
 				Focus on InputBox Custom Ref
 			</button>
 
-			<RefInputForwardRef ref={inputRefWithForward} />
+			<UseRefInputForwardRef ref={inputRefWithForward} />
 			<button
 				onClick={() => {
 					if (inputRefWithForward.current) inputRefWithForward.current.focus();
@@ -62,4 +62,4 @@ const Ref = () => {
 	);
 };
 
-export default Ref;
+export default UseRef;

@@ -1,12 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
+import Effect from "./UseEffect";
 
-function Topnavbar(props) {
-	let styleobj = { backgroundColor: "darkcyan" };
+/* 
+hooks name should starts with "use"
+Hooks should be declared in the top order of the comp
+Hooks should be executed in the same for each rendering
+Hooks can be used only within function comp.
+Hooks can't be used in class comp
+Hooks can't be used in if, for
+Do not call Hooks in event handlers
+Do not call Hooks inside functions passed to useMemo, useReducer, or useEffect 
+*/
 
+const Hooks = () => {
 	return (
 		<div>
-			<nav className="navbar navbar-expand-xl" style={styleobj}>
+			<nav
+				className="navbar navbar-expand-xl"
+				style={{ backgroundColor: "#eeeeee" }}
+			>
 				<div className="container-fluid">
 					<a className="navbar-brand" href="#">
 						React Demo
@@ -29,111 +43,67 @@ function Topnavbar(props) {
 									Home
 								</Link>
 							</li>
-              <li className="nav-item">
+							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"/lifecycledemo"}
+									to={"useeffect"}
 								>
-									LifeCycle
+									useEffect
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"hooks"}
+									to={"usecontext"}
 								>
-									Hooks
+									useContext
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"designpatterns"}
+									to={"ref"}
 								>
-									Design Patterns
-								</Link>
-							</li>
-              <li className="nav-item">
-								<Link
-									className="nav-link active"
-									aria-current="page"
-									to={"/forms"}
-								>
-									Forms
+									useRef
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"/axiosdemo"}
+									to={"usecallback"}
 								>
-									Axios
+									useCallback
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"/redux"}
+									to={"usememo"}
 								>
-									reduxdemo
+									useMemo
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"/counter"}
+									to={"usereducer"}
 								>
-									Counter
-								</Link>
-							</li>
-							<li className="nav-item">
-								<Link
-									className="nav-link active"
-									aria-current="page"
-									to={"/classcounter"}
-								>
-									ClassCounter
-								</Link>
-							</li>
-							<li className="nav-item">
-								<Link
-									className="nav-link active"
-									aria-current="page"
-									to={"timer"}
-								>
-									Timer
-								</Link>
-							</li>
-              <li className="nav-item">
-								<Link
-									className="nav-link active"
-									aria-current="page"
-									to={"/productlist"}
-								>
-									ProductList
-								</Link>
-							</li>
-              <li className="nav-item">
-								<Link
-									className="nav-link active"
-									aria-current="page"
-									to={"/productdetail/2/laptop"}
-								>
-									Productdetails
+									useReducer
 								</Link>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</nav>
+			<Outlet />
 		</div>
 	);
-}
+};
 
-export default Topnavbar;
+export default Hooks;

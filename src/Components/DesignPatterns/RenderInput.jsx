@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const InputRender = (props) => {
+const RenderInput = (props) => {
 	const [value, setValue] = useState("");
 
 	const handleChange = (e) => {
@@ -16,4 +16,4 @@ const InputRender = (props) => {
 	);
 };
 
-export default InputRender;
+export default RenderInput;

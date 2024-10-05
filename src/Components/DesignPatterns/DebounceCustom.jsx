@@ -25,7 +25,7 @@ import React, { useCallback, useMemo, useState } from "react";
 // };
 
 /* Controlled Input */
-const Debounce = () => {
+const DebounceCustom = () => {
 	const [inputValue, setInputValue] = useState("");
 	let counter = 0;
 	const getData = (e, ...arr) => {
@@ -59,4 +59,4 @@ const Debounce = () => {
 	);
 };
 
-export default Debounce;
+export default DebounceCustom;

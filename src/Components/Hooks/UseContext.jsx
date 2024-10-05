@@ -5,7 +5,7 @@ import ReactDOM from "react-dom/client";
 
 const UserContext = createContext();
 
-export const Context = () => {
+export const UseContext = () => {
 	const [user, setUser] = useState("Jesse Hall");
 	console.log("component 1 rendered");
 	return (
@@ -59,4 +59,4 @@ const Component5 = () => {
 	);
 };
 
-export default Context;
+export default UseContext;
