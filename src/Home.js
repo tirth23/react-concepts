@@ -4,7 +4,7 @@ function Home(props) {
 	//props.msg="Hai!!"//error-Props immutable
 	let country = "india";
 	//jsx=javascript xml
-	let styleobj = { backgroundColor: "tomato" };
+	let styleobj = { backgroundColor: "#f1c40f" };
 	let btn = <button>click me</button>;
 
 	function myfunction() {

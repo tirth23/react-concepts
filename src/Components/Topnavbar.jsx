@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Topnavbar(props) {
-	let styleobj = { backgroundColor: "darkcyan" };
+	let styleobj = { backgroundColor: "#6877bb" };
 
 	return (
 		<div>
