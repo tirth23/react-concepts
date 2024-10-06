@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Routes, Route, Outlet } from "react-router-dom";
-import Effect from "./UseEffect";
+import { Outlet } from "react-router-dom";
 
 /* 
 hooks name should starts with "use"
@@ -65,7 +64,7 @@ const Hooks = () => {
 								<Link
 									className="nav-link active"
 									aria-current="page"
-									to={"ref"}
+									to={"useref"}
 								>
 									useRef
 								</Link>
