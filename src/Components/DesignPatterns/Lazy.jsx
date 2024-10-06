@@ -3,7 +3,10 @@ import React, { useState, lazy, Suspense } from "react";
 
 /* lazy lets you defer loading component’s code until it is rendered for the first time. */
 /* Lazy loading is technique that allows to load scryRenderedComponentsWithType, modules or asserts
-asynchronously, improving loading time of the application. mostly used for large component */
+asynchronously, improving loading time of the application. mostly used for large component 
+
+Check in Network tab and select js and check chunks created for lazy loaded component & size of bundle is reduced
+*/
 const LazyText = lazy(() => delayForDemo(import("./LazyText.jsx")));
 
 function delayForDemo(promise) {

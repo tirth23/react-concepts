@@ -1,5 +1,5 @@
 // Core imports
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Stylesheet
@@ -9,15 +9,6 @@ import "./App.css";
 import Home from "./Home.js";
 import Lifecycledemo from "./Components/Lifecycledemo";
 import Topnavbar from "./Components/Topnavbar";
-
-// Hooks components
-import Hooks from "./Components/Hooks/Hooks.jsx";
-import UseEffect from "./Components/Hooks/UseEffect.jsx";
-import UseContext from "./Components/Hooks/UseContext.jsx";
-import UseRef from "./Components/Hooks/UseRef.jsx";
-import UseCallback from "./Components/Hooks/UseCallback.jsx";
-import UseMemo from "./Components/Hooks/UseMemo.jsx";
-import UseReducer from "./Components/Hooks/UseReducer.jsx";
 
 // Design pattern components
 import DesignPatterns from "./Components/DesignPatterns/DesignPatterns.jsx";
@@ -47,6 +38,16 @@ import Productdetails from "./Components/ProductList/Productdetails.jsx";
 import Productlist from "./Components/ProductList/Productlist.jsx";
 import Errorcomp from "./Components/Errorcomp";
 
+// Hooks components
+import Hooks from "./Components/Hooks/Hooks.jsx";
+//Dynamic import should be done atlast in the file after all import
+const UseEffect = lazy(() => import("./Components/Hooks/UseEffect.jsx"));
+const UseContext = lazy(() => import("./Components/Hooks/UseContext.jsx"));
+const UseRef = lazy(() => import("./Components/Hooks/UseRef.jsx"));
+const UseCallback = lazy(() => import("./Components/Hooks/UseCallback.jsx"));
+const UseMemo = lazy(() => import("./Components/Hooks/UseMemo.jsx"));
+const UseReducer = lazy(() => import("./Components/Hooks/UseReducer.jsx"));
+
 /* 
   Best Practices:
   1. Core libraries (e.g., React, React Router) are imported first.
@@ -66,12 +67,54 @@ function App() {
 
 				{/* Hooks routes */}
 				<Route path="/hooks" element={<Hooks />}>
-					<Route path="/hooks/useeffect" element={<UseEffect />} />
-					<Route path="/hooks/usecontext" element={<UseContext />} />
-					<Route path="/hooks/useref" element={<UseRef />} />
-					<Route path="/hooks/usecallback" element={<UseCallback />} />
-					<Route path="/hooks/usememo" element={<UseMemo />} />
-					<Route path="/hooks/usereducer" element={<UseReducer />} />
+					<Route
+						path="/hooks/useeffect"
+						element={
+							<Suspense fallback={<h2>Loading UseEffect...</h2>}>
+								<UseEffect />
+							</Suspense>
+						}
+					/>
+					<Route
+						path="/hooks/usecontext"
+						element={
+							<Suspense fallback={<h2>Loading UseContext...</h2>}>
+								<UseContext />
+							</Suspense>
+						}
+					/>
+					<Route
+						path="/hooks/useref"
+						element={
+							<Suspense fallback={<h2>Loading UseRef...</h2>}>
+								<UseRef />
+							</Suspense>
+						}
+					/>
+					<Route
+						path="/hooks/usecallback"
+						element={
+							<Suspense fallback={<h2>Loading UseCallback...</h2>}>
+								<UseCallback />
+							</Suspense>
+						}
+					/>
+					<Route
+						path="/hooks/usememo"
+						element={
+							<Suspense fallback={<h2>Loading UseMemo...</h2>}>
+								<UseMemo />
+							</Suspense>
+						}
+					/>
+					<Route
+						path="/hooks/usereducer"
+						element={
+							<Suspense fallback={<h2>Loading UseReducer...</h2>}>
+								<UseReducer />
+							</Suspense>
+						}
+					/>
 				</Route>
 
 				{/* Design Patterns routes */}
