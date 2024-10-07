@@ -30,6 +30,15 @@ const DesignPatterns = () => {
 									Home
 								</Link>
 							</li>
+              <li className="nav-item">
+								<Link
+									className="nav-link active"
+									aria-current="page"
+									to={"renderinglist"}
+								>
+									Efficiently Rendering List
+								</Link>
+							</li>
 							<li className="nav-item">
 								<Link
 									className="nav-link active"

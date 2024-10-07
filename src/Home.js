@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Home(props) {
 	//props.msg="Hai!!"//error-Props immutable
 	let country = "india";
 	//jsx=javascript xml
 	let styleobj = { backgroundColor: "#f1c40f" };
-	let btn = <button>click me</button>;
+
+	const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+	const [add, setAdd] = useState(arr);
+
+	let btn = <button>XXX</button>;
 
 	function myfunction() {
 		return <p>returned from function call</p>;
 	}
+
 	return (
 		<>
 			<h2>
@@ -21,6 +27,10 @@ function Home(props) {
 			</p>
 			{myfunction()}
 			{btn}
+			<button onClick={() => setAdd((prev) => [11, ...prev])}>add</button>
+			{add.map((item, index) => {
+				return <p key={index}>{item}</p>;
+			})}
 		</>
 	);
 }
