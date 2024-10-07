@@ -34,9 +34,18 @@ const DesignPatterns = () => {
 								<Link
 									className="nav-link active"
 									aria-current="page"
+									to={"syntheticevent"}
+								>
+									Synthetic Event
+								</Link>
+							</li>
+              <li className="nav-item">
+								<Link
+									className="nav-link active"
+									aria-current="page"
 									to={"renderinglist"}
 								>
-									Efficiently Rendering List
+									Rendering List
 								</Link>
 							</li>
 							<li className="nav-item">
@@ -63,7 +72,7 @@ const DesignPatterns = () => {
 									aria-current="page"
 									to={"/designpatterns/usingcustomhook"}
 								>
-									UsingCustomHook
+									CustomHook
 								</Link>
 							</li>
 							<li className="nav-item">

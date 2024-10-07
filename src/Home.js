@@ -6,11 +6,7 @@ function Home(props) {
 	//jsx=javascript xml
 	let styleobj = { backgroundColor: "#f1c40f" };
 
-	const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-	const [add, setAdd] = useState(arr);
-
-	let btn = <button>XXX</button>;
+	let btn = <button>Button</button>;
 
 	function myfunction() {
 		return <p>returned from function call</p>;
@@ -27,10 +23,6 @@ function Home(props) {
 			</p>
 			{myfunction()}
 			{btn}
-			<button onClick={() => setAdd((prev) => [11, ...prev])}>add</button>
-			{add.map((item, index) => {
-				return <p key={index}>{item}</p>;
-			})}
 		</>
 	);
 }

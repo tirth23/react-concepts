@@ -10,9 +10,9 @@ const ListRendering = () => {
 		{ id: "e", text: "text 4" },
 	]);
 
-  // when new data added at start of array, all children will be re-rendered if unique key not used
+	// when new data added at start of array, all children will be re-rendered if unique key not used
 	const addMoreData = () => {
-		setData((prevData) => [{id: "f", text: "text 5" }, ...prevData]);
+		setData((prevData) => [{ id: "f", text: "text 5" }, ...prevData]);
 	};
 	return (
 		<>

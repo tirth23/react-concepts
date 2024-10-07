@@ -41,6 +41,7 @@ import Errorcomp from "./Components/Errorcomp";
 // Hooks components
 import Hooks from "./Components/Hooks/Hooks.jsx";
 import ListRendering from "./Components/DesignPatterns/ListRendering.jsx";
+import SyntheticEvent from "./Components/DesignPatterns/SyntheticEvent.jsx";
 //Dynamic import should be done atlast in the file after all import
 const UseEffect = lazy(() => import("./Components/Hooks/UseEffect.jsx"));
 const UseContext = lazy(() => import("./Components/Hooks/UseContext.jsx"));
@@ -148,6 +149,10 @@ function App() {
           <Route
 						path="/designpatterns/renderinglist"
 						element={<ListRendering />}
+					/>
+          <Route
+						path="/designpatterns/syntheticevent"
+						element={<SyntheticEvent />}
 					/>
 				</Route>
 
