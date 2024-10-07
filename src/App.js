@@ -22,6 +22,8 @@ import Citylist from "./Components/DesignPatterns/HOCCitylist.jsx";
 import Comp1 from "./Components/DesignPatterns/HOC2Comp1.jsx";
 import RenderProps from "./Components/DesignPatterns/RenderProps.jsx";
 import CompoundPattern from "./Components/DesignPatterns/CompoundPattern.jsx";
+import ListRendering from "./Components/DesignPatterns/ListRendering.jsx";
+import SyntheticEvent from "./Components/DesignPatterns/SyntheticEvent.jsx";
 
 // Form components
 import Forms from "./Components/Forms/Forms.jsx";
@@ -40,9 +42,10 @@ import Errorcomp from "./Components/Errorcomp";
 
 // Hooks components
 import Hooks from "./Components/Hooks/Hooks.jsx";
-import ListRendering from "./Components/DesignPatterns/ListRendering.jsx";
-import SyntheticEvent from "./Components/DesignPatterns/SyntheticEvent.jsx";
+import UseState from "./Components/Hooks/UseState.jsx";
+
 //Dynamic import should be done atlast in the file after all import
+const useState = lazy(() => import("./Components/Hooks/UseState.jsx"));
 const UseEffect = lazy(() => import("./Components/Hooks/UseEffect.jsx"));
 const UseContext = lazy(() => import("./Components/Hooks/UseContext.jsx"));
 const UseRef = lazy(() => import("./Components/Hooks/UseRef.jsx"));
@@ -69,6 +72,14 @@ function App() {
 
 				{/* Hooks routes */}
 				<Route path="/hooks" element={<Hooks />}>
+					<Route
+						path="/hooks/usestate"
+						element={
+							<Suspense fallback={<h2>Loading UseState...</h2>}>
+								<UseState />
+							</Suspense>
+						}
+					/>
 					<Route
 						path="/hooks/useeffect"
 						element={
@@ -146,11 +157,11 @@ function App() {
 						path="/designpatterns/debouncecustom"
 						element={<DebounceCustom />}
 					/>
-          <Route
+					<Route
 						path="/designpatterns/renderinglist"
 						element={<ListRendering />}
 					/>
-          <Route
+					<Route
 						path="/designpatterns/syntheticevent"
 						element={<SyntheticEvent />}
 					/>

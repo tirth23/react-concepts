@@ -10,7 +10,7 @@ const Forms = () => {
 			>
 				<div className="container-fluid">
 					<a className="navbar-brand" href="#">
-						React Demo
+						Forms
 					</a>
 					<button
 						className="navbar-toggler"

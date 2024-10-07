@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
 /* 
+In React, hooks are special functions that allow you to add extra capabilities to your functional components. They enable you to
+manage state, perform side effects, and reuse logic in a more organized and efficient way.
+
 hooks name should starts with "use"
 Hooks should be declared in the top order of the comp
 Hooks should be executed in the same for each rendering
@@ -22,7 +25,7 @@ const Hooks = () => {
 			>
 				<div className="container-fluid">
 					<a className="navbar-brand" href="#">
-						React Demo
+						Hooks
 					</a>
 					<button
 						className="navbar-toggler"
@@ -40,6 +43,15 @@ const Hooks = () => {
 							<li className="nav-item">
 								<Link className="nav-link active" aria-current="page" to={"/"}>
 									Home
+								</Link>
+							</li>
+              <li className="nav-item">
+								<Link
+									className="nav-link active"
+									aria-current="page"
+									to={"usestate"}
+								>
+									useState
 								</Link>
 							</li>
 							<li className="nav-item">

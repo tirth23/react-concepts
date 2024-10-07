@@ -10,7 +10,7 @@ const DesignPatterns = () => {
 			>
 				<div className="container-fluid">
 					<a className="navbar-brand" href="#">
-						React Demo
+						Design Patterns
 					</a>
 					<button
 						className="navbar-toggler"
