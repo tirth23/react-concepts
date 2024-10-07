@@ -1,6 +1,6 @@
 // Core imports
 import React, { lazy, Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 // Stylesheet
 import "./App.css";
@@ -69,7 +69,6 @@ function App() {
 			<Routes>
 				{/* Home route */}
 				<Route path="/" element={<Home msg="Hello world" country="india" />} />
-
 				{/* Hooks routes */}
 				<Route path="/hooks" element={<Hooks />}>
 					<Route
@@ -129,7 +128,6 @@ function App() {
 						}
 					/>
 				</Route>
-
 				{/* Design Patterns routes */}
 				<Route path="/designpatterns" element={<DesignPatterns />}>
 					<Route path="/designpatterns/lazy" element={<Lazy />} />
@@ -166,7 +164,6 @@ function App() {
 						element={<SyntheticEvent />}
 					/>
 				</Route>
-
 				{/* Forms routes */}
 				<Route path="/forms" element={<Forms />}>
 					<Route
@@ -175,12 +172,10 @@ function App() {
 					/>
 					<Route path="/forms/controlledform" element={<Controlledform />} />
 				</Route>
-
 				{/* Other routes */}
 				<Route path="/lifecycledemo" element={<Lifecycledemo info="Hi" />} />
 				<Route path="/axiosdemo" element={<AxiosDemo />} />
 				<Route path="/redux" element={<Login />} />
-
 				<Route
 					path="/counter"
 					element={
@@ -194,6 +189,9 @@ function App() {
 				<Route path="/timer" element={<Timer />} />
 				<Route path="/productlist" element={<Productlist />} />
 				<Route path="/productdetail/:pid/:pname" element={<Productdetails />} />
+        
+        {/* will route to root */}
+				<Route path="/randomvalue" element={<Navigate to="/" />} /> 
 				<Route path="*" element={<Errorcomp />} />
 			</Routes>
 		</div>
