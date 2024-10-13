@@ -7,8 +7,8 @@ const UserContext = createContext();
 export const UseContext = () => {
 	const [user, setUser] = useState("Jesse Hall");
 	console.log("component 1 rendered");
-  let currentValue = 100;
-  console.log(currentValue, 'in main component');
+	let currentValue = 100;
+	console.log(currentValue, "in main component");
 	return (
 		<UserContext.Provider value={{ user, setUser, currentValue }}>
 			<h1>{`Hello ${user}!`}</h1>
@@ -32,7 +32,9 @@ function Component3() {
 	console.log("component 3 rendered");
 	return (
 		<>
-			<h1 onClick={() => setCheck(check + 1)}>Click Component 3 to re-render 3, 4, 5 components</h1>
+			<h1 onClick={() => setCheck(check + 1)}>
+				Click Component 3 to re-render 3, 4, 5 components
+			</h1>
 			{check}
 			<Component4 />
 		</>
@@ -40,15 +42,15 @@ function Component3() {
 }
 
 function Component4() {
-  let { currentValue} = useContext(UserContext);
+	let { currentValue } = useContext(UserContext);
 	console.log("component 4 rendered");
-  currentValue = currentValue + 100;
-  console.log(currentValue, 'in component 4');
-  /* it doesnot cause re render since change in value is in local copy */
-  const doesNotCauseReRender = () => {
-    currentValue = currentValue + 200;
-    console.log(currentValue, 'in component 4 click');
-  }
+	currentValue = currentValue + 100;
+	console.log(currentValue, "in component 4");
+	/* it doesnot cause re render since change in value is in local copy */
+	const doesNotCauseReRender = () => {
+		currentValue = currentValue + 200;
+		console.log(currentValue, "in component 4 click");
+	};
 	return (
 		<>
 			<h1 onClick={doesNotCauseReRender}>Click Component 4</h1>
@@ -60,13 +62,15 @@ function Component4() {
 const Component5 = () => {
 	const { user, setUser } = useContext(UserContext);
 	console.log("component 5 rendered");
-  const causeReRender = () => {
-    setUser("Changed User");
-    console.log("component 5 re-rendered");
-  }
+	const causeReRender = () => {
+		setUser("Changed User");
+		console.log("component 5 re-rendered");
+	};
 	return (
 		<>
-			<h1 onClick={causeReRender}>Click Component 5 to render all components</h1>
+			<h1 onClick={causeReRender}>
+				Click Component 5 to render all components
+			</h1>
 			<h2>{`Hello ${user} again!`}</h2>
 		</>
 	);
